@@ -1,4 +1,4 @@
-requests
-urllib3
-flask
-Flask-BasicAuth
+Flask==2.0.0
+requests==2.24.0
+urllib3==1.25.11
+flask_basicauth==0.2.0
