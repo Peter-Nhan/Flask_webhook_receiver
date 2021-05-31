@@ -1,6 +1,51 @@
+# Changes
 Made some changes from the fork please see https://peter-nhan.github.io/Webhook-Python-Curl-DNAC/
 for more details.
+* flask_rx.py - modified the original - flask webhook receiver, it will listen on active interface, will save webhook received to file and display it on the screen.
+* flask_rx_web_view.py - improves on previous webhook receiver and adds a web portal to view the log - browse to https://x.x.x.x/log
+* test_webhook.py - un-modified from fork - clients that fires webhook notification at the receiver. Modified config.py with IP address of webhook receiver.
+* config.py - used variable WEBHOOK_URL is on used by test_webhook.py, all other variables are used by every python files.
 
+# To use
+To Send notifications.
+```
+$ python3 test_webhook.py
+```
+To use either 
+```
+$ python3 flask_rx.py
+ * Serving Flask app 'flask_rx' (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+ * Running on https://172.16.1.16:5443/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 788-486-105
+```
+or 
+```
+$ python3 flask_rx_web_view.py
+ * Serving Flask app 'flask_rx_web_view' (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+ * Running on https://172.16.1.16:5443/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 788-486-105
+
+```
+Browse to the receiver via web browser - use appropriate IP - https://x.x.x.x/log
+
+
+---
 # Cisco DNA Center Webhook Receiver
 
 This repo is for a simple Flask application that will receive webhooks notifications. 
