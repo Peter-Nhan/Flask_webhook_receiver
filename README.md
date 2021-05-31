@@ -5,9 +5,13 @@ for more details.
 * flask_rx_web_view.py - improves on previous webhook receiver and adds a web portal to view the log - browse to https://x.x.x.x/log
 * test_webhook.py - un-modified from fork - clients that fires webhook notification at the receiver. Modified config.py with IP address of webhook receiver.
 * config.py - used variable WEBHOOK_URL is on used by test_webhook.py, all other variables are used by every python files.
+* requirements.txt - contains the python library need to use these files. 
+```
+   pip3 install -r requirements.txt
+```
 
 ## To use
-To Send notifications.
+To Send notifications - modify IP address of receiver in config.py before use.
 ```
 $ python3 test_webhook.py
 ```
