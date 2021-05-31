@@ -1,0 +1,93 @@
+{
+    "version": "",
+    "instanceId": "ea6e28c5-b7f2-43a4-9937-def73771c5ef",
+    "eventId": "NETWORK-NON-FABRIC_WIRED-1-251",
+    "namespace": "ASSURANCE",
+    "name": "",
+    "description": "",
+    "type": "NETWORK",
+    "category": "ALERT",
+    "domain": "Connectivity",
+    "subDomain": "Non-Fabric Wired",
+    "severity": 1,
+    "source": "ndp",
+    "timestamp": 1574457834497,
+    "tags": "",
+    "details": {
+        "Type": "Network Device",
+        "Assurance Issue Priority": "P1",
+        "Assurance Issue Details": "Interface GigabitEthernet1/0/3 on the following network device is down: Local Node: PDX-M",
+        "Device": "10.93.141.17",
+        "Assurance Issue Name": "Interface GigabitEthernet1/0/3 is Down on Network Device 10.93.141.17",
+        "Assurance Issue Category": "Connectivity",
+        "Assurance Issue Status": "active"
+    },
+    "ciscoDnaEventLink": "https://10.93.141.35/dna/assurance/issueDetails?issueId=ea6e28c5-b7f2-43a4-9937-def73771c5ef",
+    "note": "To programmatically get more info see here - https://<ip-address>/dna/platform/app/consumer-portal/developer-toolkit/apis?apiId=8684-39bb-4e89-a6e4",
+    "tntId": "",
+    "context": "",
+    "tenantId": ""
+}
+= - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - 
+{
+    "version": "",
+    "instanceId": "ea6e28c5-b7f2-43a4-9937-def73771c5ef",
+    "eventId": "NETWORK-NON-FABRIC_WIRED-1-251",
+    "namespace": "ASSURANCE",
+    "name": "",
+    "description": "",
+    "type": "NETWORK",
+    "category": "ALERT",
+    "domain": "Connectivity",
+    "subDomain": "Non-Fabric Wired",
+    "severity": 1,
+    "source": "ndp",
+    "timestamp": 1574457834497,
+    "tags": "",
+    "details": {
+        "Type": "Network Device",
+        "Assurance Issue Priority": "P1",
+        "Assurance Issue Details": "Interface GigabitEthernet1/0/3 on the following network device is down: Local Node: PDX-M",
+        "Device": "10.93.141.17",
+        "Assurance Issue Name": "Interface GigabitEthernet1/0/3 is Down on Network Device 10.93.141.17",
+        "Assurance Issue Category": "Connectivity",
+        "Assurance Issue Status": "active"
+    },
+    "ciscoDnaEventLink": "https://10.93.141.35/dna/assurance/issueDetails?issueId=ea6e28c5-b7f2-43a4-9937-def73771c5ef",
+    "note": "To programmatically get more info see here - https://<ip-address>/dna/platform/app/consumer-portal/developer-toolkit/apis?apiId=8684-39bb-4e89-a6e4",
+    "tntId": "",
+    "context": "",
+    "tenantId": ""
+}
+= - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - 
+{
+    "version": "",
+    "instanceId": "ea6e28c5-b7f2-43a4-9937-def73771c5ef",
+    "eventId": "NETWORK-NON-FABRIC_WIRED-1-251",
+    "namespace": "ASSURANCE",
+    "name": "",
+    "description": "",
+    "type": "NETWORK",
+    "category": "ALERT",
+    "domain": "Connectivity",
+    "subDomain": "Non-Fabric Wired",
+    "severity": 1,
+    "source": "ndp",
+    "timestamp": 1574457834497,
+    "tags": "",
+    "details": {
+        "Type": "Network Device",
+        "Assurance Issue Priority": "P1",
+        "Assurance Issue Details": "Interface GigabitEthernet1/0/3 on the following network device is down: Local Node: PDX-M",
+        "Device": "10.93.141.17",
+        "Assurance Issue Name": "Interface GigabitEthernet1/0/3 is Down on Network Device 10.93.141.17",
+        "Assurance Issue Category": "Connectivity",
+        "Assurance Issue Status": "active"
+    },
+    "ciscoDnaEventLink": "https://10.93.141.35/dna/assurance/issueDetails?issueId=ea6e28c5-b7f2-43a4-9937-def73771c5ef",
+    "note": "To programmatically get more info see here - https://<ip-address>/dna/platform/app/consumer-portal/developer-toolkit/apis?apiId=8684-39bb-4e89-a6e4",
+    "tntId": "",
+    "context": "",
+    "tenantId": ""
+}
+= - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - 

@@ -3,7 +3,7 @@ import json
 import os
 import time
 import cryptography
-from flask import Flask, request, abort, send_from_directory
+from flask import Flask, render_template, request, abort, send_from_directory
 from flask_basicauth import BasicAuth
 from urllib3.exceptions import InsecureRequestWarning  # for insecure https warnings
 urllib3.disable_warnings(InsecureRequestWarning)  # disable insecure https warnings
@@ -16,17 +16,26 @@ app.config['BASIC_AUTH_USERNAME'] = WEBHOOK_USERNAME
 app.config['BASIC_AUTH_PASSWORD'] = WEBHOOK_PASSWORD
 
 # If true, then site wide authentication is needed
-app.config['BASIC_AUTH_FORCE'] = True
+# otherwise if false - authentication is used only where @basic_auth.required configured
+# only used for app.route is "/" and "webhook"
+app.config['BASIC_AUTH_FORCE'] = False
 
 basic_auth = BasicAuth(app)
 
-@app.route('/')  # create a route for / - just to test server is up.
-@basic_auth.required
+@app.route("/")   # create a route for / - just to test server is up.
+@basic_auth.required   # Authenticate this request
 def index():
     return '<h1>Flask Receiver App is Up!</h1>', 200
 
+# Access the logs via the Web 
+@app.route("/log", methods=['GET'])  # create a route for /log, method GET
+def log():
+    with open('all_webhooks_detailed.json', "r") as f: 
+        content_of_file = f.read() 
+    return render_template('bootstrap.html', content_var = content_of_file, filename_var = "all_webhooks_detailed.json")
+
 @app.route('/webhook', methods=['POST'])  # create a route for /webhook, method POST
-@basic_auth.required
+@basic_auth.required   # Authenticate this request
 def webhook():
     if request.method == 'POST':
         print('Webhook Received')
@@ -51,18 +60,5 @@ def webhook():
         return 'POST Method not supported', 405
 
 if __name__ == '__main__':
-    # HTTPS enable - toggle on eby un-commenting
     app.run(ssl_context='adhoc', host='0.0.0.0', port=5443, debug=True)
-    # HTTP ONLY enable - toggle on eby un-commenting
-    # app.run(host='0.0.0.0', port=5443, debug=True)
-# Check firewall is not block 5443
-# $ sudo ufw allow 5443
-# if 'inactive' response means firewall is not on.
-# 
-# Use the following to see if the port is listen for flask.
-# $ sudo lsof -i -P -n | grep LISTEN
-#
-# Test with - Change IP address first
-# $ curl --insecure --user "username:password" --header "Content-Type: application/json" --request POST --data '{"emailAddress":"pnhan@cisco.com"}' https://XX.XX.XX.XX:5443/webhook
-# OR
-# $ python3 test_webhook.py
+    # Set to use HTTPS with port 5443
