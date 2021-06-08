@@ -30,9 +30,9 @@ def index():
 # Access the logs via the Web 
 @app.route("/log", methods=['GET'])  # create a route for /log, method GET
 def log():
-    with open('all_webhooks_detailed.json', "r") as f: 
+    with open(save_webhook_output_file, "r") as f: 
         content_of_file = f.read() 
-    return render_template('bootstrap.html', content_var = content_of_file, filename_var = "all_webhooks_detailed.json")
+    return render_template('bootstrap.html', content_var = content_of_file, filename_var = save_webhook_output_file)
 
 @app.route('/webhook', methods=['POST'])  # create a route for /webhook, method POST
 @basic_auth.required   # Authenticate this request
