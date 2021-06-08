@@ -4,10 +4,10 @@
   <head>
     <title>Webhook Output </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Automatically refresh web page every 10 seconds  -->    
     <meta http-equiv="refresh" content="10">
 <!-- Using Bootstrap for Instant fancy webpages - more details https://getbootstrap.com-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-    
 <!-- Custom styles for this template -->
     <style>
       pre {
@@ -33,6 +33,7 @@
     </style>
   </head>
   <body>
+<!-- Menu bar  -->    
     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
       <a class="navbar-brand">
         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-flower1" viewBox="0 0 16 16">
@@ -50,15 +51,15 @@
         </ul>
       </div>
     </nav>
+
     <main role="main" class="container">
       <div class="starter-template">
         <div class="alert alert-success" role="alert">
+<!-- Variable filename_var pass in via python code - variable is like jinja2  -->   
           Refresh page - to get the latest changes in {{ filename_var }}
         </div>
-
 <!-- Python variable content_of_file values are added below -->
       <pre>{{ content_var }}</pre>
-
     </div>
   </main>
 
