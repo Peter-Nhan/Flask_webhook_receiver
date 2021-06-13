@@ -3,7 +3,7 @@ import json
 import os
 import time
 import cryptography
-from flask import Flask, render_template, request, abort, send_from_directory
+from flask import Flask, render_template, request, send_file
 from flask_basicauth import BasicAuth
 from urllib3.exceptions import InsecureRequestWarning  # for insecure https warnings
 urllib3.disable_warnings(InsecureRequestWarning)  # disable insecure https warnings
@@ -27,12 +27,17 @@ basic_auth = BasicAuth(app)
 def index():
     return '<h1>Flask Receiver App is Up!</h1>', 200
 
-# Access the logs via the Web 
+# View the logs via the Web page
 @app.route("/log", methods=['GET'])  # create a route for /log, method GET
 def log():
     with open(save_webhook_output_file, "r") as f: 
         content_of_file = f.read() 
     return render_template('bootstrap.html', content_var = content_of_file, filename_var = save_webhook_output_file)
+
+# Download the logs file
+@app.route("/download", methods=['GET'])  # create a route for /download, method GET
+def download():
+    return send_file(save_webhook_output_file, as_attachment=True)
 
 @app.route('/webhook', methods=['POST'])  # create a route for /webhook, method POST
 @basic_auth.required   # Authenticate this request
