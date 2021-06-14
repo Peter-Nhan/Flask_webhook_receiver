@@ -7,6 +7,7 @@ for more details.
 * config.py - used variable WEBHOOK_URL is on used by test_webhook.py, all other variables are used by every python files.
 * userpass_base64.py - helps create the base64 encoding for Username:Password for DNAC authorization header.
 * requirements.txt - contains the python library need to use these files. 
+* Dockerfile, docker_compose.yml - dockerise the python code
 ```
    pip3 install -r requirements.txt
 ```
